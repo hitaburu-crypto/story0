@@ -1,86 +1,439 @@
-<!DOCTYPE html>
-<html lang="ja"> 
-    <head>
-        <meta charset="utf-8">
-        <title>おはなしを</title>
-        <meta name="description" content="読んで、見て、聞いて、作って、食べて、味わって、絵本のまわりで遊んで、楽しむ。 絵本と物語、おはなしのある暮らし、はじめませんか。 ">
-    <!-- 182デバイスに対応 -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- ファビコン-->
-        <link rel="icon" type="image/png" href="images/apple_f.png">
-    <!-- リセットCSS -->
-        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <!-- Googleフォント -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">    
-    <!-- オリジナルCSS -->
-        <link rel="stylesheet" href="css/style.css">
-    <!--ogp-->  
-        <meta property="og:url" content="http://example.com/index.html"><!--githubのアドレス-->
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="おはなしを">
-        <meta property="og:description" content="読んで、見て、聞いて、作って、食べて、味わって、絵本のまわりで遊んで、楽しむ。 絵本と物語、おはなしのある暮らし、はじめませんか。">
-        <meta property="og:image" content="http://example.com/images/ogp-photo.png">  <!--githubのアドレス-->    
-    </head>
-    <body>
-        <div class="cover cover-home">
-            <header class="page-header wrapper">
-                <h1 class="align-center">
-                    <a href="index.html"><img class="logo" src="images/logo-flower.png" alt="おはなしを ホーム"></a>
-                </h1>
-                <nav>
-                    <ul class="main-nav font-english">
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="menu.html">Menu</Menu></a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="question.html">Q&A</a></li>
-                        <li><a href="drawing.html">Drawing</a></li>
-                    </ul>
-                </nav>
-            </header> 
-          <img class="icon1" src="images/index11.png" alt="わくわく">
-            <h2 class="page-title font-english">はじまり はじまり</h2>
-          <div style="text-align: center;">
-            <video src="images/video1.mp4" controls width="480" height="270" muted></video>
-          </div>     
-        </div>
-        <section class="about">
-            <h3 class="heading-large font-english">おはなしを</h3>
-            <p>こんにちは。「おはなしを」の店主・りんごほっぺです。</p> 
-<p>とりあえず店主と名乗りましたが、あそび場に行くといつもいる「あのひと」のことです。<br> 
-ここでは、絵本を通して一緒にあそびたいなと、思います。どうぞよろしくお願いいたします。</p> 
-<p>読んで、見て、聞いて、作って、食べて、味わって、 
-絵本のまわりであそんで、楽しむ。<br>  
-絵本と物語、おはなしのある暮らし、はじめませんか。<br>　　　　　　　　　　　　　　　　　　（りんごほっぺ）</p>
-            </p>
-            <div class="align-center">
-                <a class="btn" href="menu.html">Menu</a>
-                <p>番組のコーナー紹介です</p>
-            </div>
-        </section>
-        <footer class="page-footer">
-            <div class="text-right">
-              <img class="icon2" src="images/index22.png" alt="やっほー">
-            </div>           
-            <h3 class="heading-large font-english">Information</h3>
-            <table class="info">
-                <tr>
-                    <th>更新予定</th>
-                    <td>隔週月曜日13時</td>
-                </tr>
-                <tr>
-                    <th>司会進行</th>
-                    <td>くま　うさ</td>
-                </tr>
-                <tr>
-                    <th>企画制作</th>
-                    <td>りんごほっぺ</td>
-                </tr>
-            </table>
-            <div class="copyright">
-                <small>&copy; 2026 ohanasi-wo</small>
-            </div>
-        </footer>
-    </body>
-</html>
+@charset "UTF-8";
+
+/* 共通部分-----*/
+html {
+  font-size: 100%;
+}
+body {
+  font-family: "M PLUS Rounded 1c", "M PLUS 1p", "sans-serif";
+  line-height: 1.7;
+  color: #432;
+  background-color: rgb(244, 231, 212);
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+/*　レイアウト　*/
+.wrapper {
+  max-width: 1120px;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+.align-center {
+  text-align: center;
+}
+/* 見出し */
+.font-english {
+  font-family: "Henny Penny", "Zen Maru Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+}
+.page-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.heading-large,
+.heading-medium {
+  font-size: 2.25rem;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+/* ボタン */
+.btn {
+  display: inline-block;
+  font-size: 1.5rem;
+  background-color: #0bd;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: 1s;
+}
+.btn:hover {
+  background-color: #0090aa;
+  scale: 1.2;
+}
+/* iframe */
+iframe {
+  width: 100%;
+}
+
+/* ヘッダー */
+.page-header {
+  padding-top: 0.5rem;
+}
+.logo {
+  width: 210px;
+}
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1rem;
+  list-style: none;
+}
+.main-nav a {
+  color: #432;
+}
+.main-nav a:hover {
+  color: #0bd;
+}
+/* HOME */
+.about {
+  max-width: 736px;
+  padding: 0 1.5rem;
+  margin: 3rem auto 0;
+}
+.about p {
+  margin-bottom: 3rem;
+}
+.row {
+  display: flex;
+  text-align: center;
+}
+.row,
+.inquiry {
+  flex-direction: column;
+}
+/* NEWS */
+
+/* 記事部分 */
+.post {
+  margin-bottom: 3rem;
+}
+.post-title {
+  font-weight: normal;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+.post-info {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.post-cat {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+.post-cat a {
+  color: #432;
+  background-color: #faf7f0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+}
+.post-cat a:hover {
+  background-color: #c9c2bc;
+}
+.post-date {
+  font-size: 0.875rem;
+}
+
+.post p {
+  margin-bottom: 1.5rem;
+  line-height: 2;
+}
+/* side */
+.side-menu {
+  list-style: none;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.side-menu li {
+  border-bottom: 1px solid #c9c2bc;
+}
+.side-menu a {
+  color: #432;
+  display: block;
+  padding: 1rem;
+}
+.side-menu a:hover {
+  color: #0bd;
+}
+
+/* MEN------- */
+.grid {
+  display: grid;
+  gap: 2rem 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+}
+.item img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.item p {
+  font-size: 0.875rem;
+}
+
+/* CONTACT
+------------------------------- */
+
+/* 店舗情報 */
+.location {
+  margin-bottom: 3.5rem;
+}
+.location-info {
+  margin-bottom: 2rem;
+}
+.location-info .info {
+  padding: 0;
+}
+/*　おみくじ　*/
+.row {
+  display: flex;
+  text-align: center;
+}
+.row,
+.inquiry {
+  flex-direction: column;
+}
+main {
+  flex: 3;
+  margin-right: 3rem;
+}
+#gacha-button {
+  display: inline-block;
+  font-size: 1.5rem;
+  background-color: #0bd;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: 1s;
+  margin-bottom: 5rem;
+}
+#gacha-button:hover {
+  background-color: #0090aa;
+  scale: 1.2;
+}
+#gacha-display {
+  margin-top: 1rem;
+  min-height: 3rem;
+  margin-bottom: 4rem;
+  font-size: 1.125rem;
+}
+/* お問い合わせ */
+p {
+  margin: 1rem 0 2rem;
+}
+
+/* SNS */
+.sns-item {
+  margin-bottom: 2rem;
+}
+.sns-item .heading-medium {
+  margin-bottom: 0.5rem;
+}
+.sns-youtube {
+  aspect-ratio: 16/9;
+}
+.sns-youtube iframe {
+  height: 100%;
+}
+/*Q&A*/
+.question th,
+.question td {
+  border-bottom: 1px solid #c9c2bc;
+}
+.question th {
+  text-align: left;
+  font-weight: normal;
+  padding: 1rem;
+}
+.question td {
+  padding: 1rem 0;
+}
+
+/* フッター-- */
+.text-right {
+  text-align: right;
+}
+.info {
+  width: 100%;
+  max-width: 544px;
+  margin: auto;
+  padding: 0 1.5rem;
+  border-spacing: 0;
+}
+.info th,
+.info td {
+  border-bottom: 1px solid #c9c2bc;
+}
+.info th {
+  text-align: left;
+  font-weight: normal;
+  padding: 1rem;
+}
+.info td {
+  padding: 1rem 0;
+}
+.copyright {
+  background-color: #432;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 6rem;
+  color: #fff;
+}
+video {
+  display: flex;
+  justify-content: center;
+}
+.about {
+  margin: 4rem auto 0;
+}
+
+/* NE/* デスクトップ版
+------------------------------- */
+@media (min-width: 800px) {
+  /* 見出し */
+  .page-title {
+    font-size: 4rem;
+  }
+  .heading-large {
+    font-size: 3rem;
+  }
+  .post-title {
+    font-size: 1.25rem;
+  }
+
+  /* ヘッダー */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.25rem;
+  }
+  .main-nav {
+    font-size: 1.25rem;
+  }
+  /* HOWS */
+  .news-contents {
+    display: flex;
+    justify-content: space-between;
+  }
+  .post {
+    width: 70%;
+    order: 2;
+  }
+  .sidebar {
+    width: 22%;
+    order: 3;
+  }
+  .sidebar .heading-medium {
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  /* NEWS */
+  .news-contents {
+    display: flex;
+    justify-content: space-between;
+  }
+  .ad {
+    order: 1;
+    display: block;
+  }
+  /* MENU */
+  .grid {
+    gap: 3rem 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .item img {
+    margin-bottom: 0.5rem;
+  }
+  .item p {
+    font-size: 1rem;
+  }
+  .item-big {
+    grid-column: 1/3;
+    grid-row: 1/3;
+  }
+  .item-big img {
+    height: 94.5%;
+    width: 100%;
+  }
+  /* CONTACT */
+  .sns {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 0;
+  }
+  .sns-item {
+    flex: 1;
+  }
+
+  /* フッター */
+  .page-footer {
+    background-size: cover;
+    background-position: center;
+    padding-top: 4rem;
+  }
+  .info {
+    width: 100%;
+    max-width: 544px;
+    margin: auto;
+    padding: 0 1.5rem;
+    border-spacing: 0;
+  }
+  .info th,
+  .info td {
+    border-bottom: 1px solid #c9c2bc;
+  }
+  .info th {
+    text-align: left;
+    font-weight: normal;
+    padding: 1rem;
+    padding-left: 2.5rem;
+  }
+  .info td {
+    padding: 1rem 0;
+  }
+  .copyright {
+    background-color: #432;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 6rem;
+    color: #fff;
+  }
+  .item img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+  .item p {
+    font-size: 0.875rem;
+  }
+
+  /* CONTACT
+------------------------------- */
+  .info th,
+  .info td {
+    border-bottom: 1px solid #c9c2bc;
+  }
+  .info th {
+    text-align: left;
+    font-weight: normal;
+    padding: 1rem;
+    padding-left: 2.5rem;
+  }
+  .info td {
+    padding: 1rem 0;
+  }
+  .copyright {
+    background-color: #432;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 6rem;
+    color: #fff;
+  }
+  .ad {
+    display: none;
+  }
+}
